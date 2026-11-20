@@ -57,6 +57,7 @@ Rules: the questions test the curriculum's terms and meanings, not robotics. The
 
 - The user has a controls/electronics background. Don't explain basic electronics or control theory unless asked. Do challenge hardware choices from an **architecture** perspective (constraints, risks, quality impact, reversibility).
 - Project constraints: **low time and low money** (private hobby project). A recommendation that adds cost or complexity must say so.
+- When you introduce a new abbreviation or ID prefix in any file, add it to `ABBREVIATIONS.md` in the same session.
 - Don't state numbers from datasheets as facts without a source. Mark them "to verify" or ask the user to check.
 - If this repo is ever published: `reference/` must stay out (licence terms). `.gitignore` already handles this.
 

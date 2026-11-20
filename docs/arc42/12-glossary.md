@@ -1,6 +1,7 @@
 # 12. Glossary
 
 > Exercise: **E10** (and add terms in any session). English exam term first, German in brackets.
+> Abbreviations and ID prefixes are listed separately in [ABBREVIATIONS.md](../../ABBREVIATIONS.md).
 
 | Term | Definition |
 |---|---|
