@@ -62,6 +62,9 @@ These prefixes number items inside this repository.
 | **LOC** | Lines of Code |
 | **SaaS** | Software as a Service |
 | **UI** | User Interface |
+| **QA** | Quality assurance (testing role) |
+| **MVP** | Minimum viable product: the smallest release that is still useful |
+| **v1 / v2** | First / second release of the Balance Bot platform (scope in §1.1) |
 
 ## 4. Hardware and electronics
 
