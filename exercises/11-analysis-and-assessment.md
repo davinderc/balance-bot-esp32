@@ -2,7 +2,7 @@
 
 - **Learning goals:** LG 05-01 (R1), 05-02 (R1/R3), 05-03 (R2)
 - **Edits:** `docs/arc42/10-quality-requirements.md`, `docs/arc42/11-risks-and-technical-debt.md`
-- **Time:** about 90 min
+- **Time:** about 90 min of focused work; block about twice that (see the [timeline](README.md#timeline))
 
 ## Goal
 

@@ -2,7 +2,7 @@
 
 - **Learning goals:** LG 03-02 (R1), 03-04 (R1–R3), 03-06 (R1), 04-05 (R1, building-block view)
 - **Edits:** `docs/arc42/05-building-block-view.md`
-- **Time:** about 90 min. **This is the heaviest R1 session; don't skip it.**
+- **Time:** about 90 min of focused work; block about twice that (see the [timeline](README.md#timeline)). **This is the heaviest R1 session; don't skip it.**
 
 ## Goal
 

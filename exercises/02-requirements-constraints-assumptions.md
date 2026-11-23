@@ -2,7 +2,7 @@
 
 - **Learning goals:** LG 02-01 (R1), 02-02 (R1–R3), 02-05 (R1)
 - **Edits:** `docs/arc42/01-introduction-and-goals.md` (1.1), `docs/arc42/02-constraints.md`, `docs/arc42/09-decisions.md` (decision log), `docs/arc42/11-risks-and-technical-debt.md` (assumptions)
-- **Time:** about 90 min
+- **Time:** about 90 min of focused work; block about twice that (see the [timeline](README.md#timeline))
 
 ## Goal
 

@@ -2,7 +2,7 @@
 
 - **Learning goals:** LG 03-08 (R1/R3), 03-09 (R3); revisits 03-06 (dependency injection)
 - **Edits:** `docs/arc42/04-solution-strategy.md` and `docs/arc42/05-building-block-view.md` (mark the patterns used); optionally an ADR
-- **Time:** about 75 min
+- **Time:** about 75 min of focused work; block about twice that (see the [timeline](README.md#timeline))
 
 ## Goal
 

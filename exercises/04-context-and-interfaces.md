@@ -2,7 +2,7 @@
 
 - **Learning goals:** LG 04-05 (R1, context view), 03-07 (R1–R3), 04-06 (R1)
 - **Edits:** `docs/arc42/03-context-and-scope.md`
-- **Time:** about 75 min
+- **Time:** about 75 min of focused work; block about twice that (see the [timeline](README.md#timeline))
 
 ## Goal
 

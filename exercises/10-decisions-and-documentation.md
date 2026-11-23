@@ -2,7 +2,7 @@
 
 - **Learning goals:** LG 04-08 (R1/R2), 04-01 (R1), 04-02 (R1–R3), 04-09 (R3), 01-03 (R3)
 - **Edits:** `docs/adr/`, `docs/arc42/09-decisions.md`, `docs/arc42/12-glossary.md`, `README.md`
-- **Time:** about 90 min
+- **Time:** about 90 min of focused work; block about twice that (see the [timeline](README.md#timeline))
 
 ## Goal
 

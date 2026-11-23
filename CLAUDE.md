@@ -28,7 +28,7 @@ Spend time in that order. Say so when a topic is R3, so the user doesn't over-in
 
 When the user says e.g. "let's do exercise 05":
 
-1. **Prepare (silently):** read `exercises/05-*.md`, `notes/progress.md`, the arc42 files the exercise names, and the listed learning goals from the 2025.1 curriculum.
+1. **Prepare (silently):** read `exercises/05-*.md`, `notes/progress.md`, the arc42 files the exercise names, and the listed learning goals from the 2025.1 curriculum. Compare today's date with the calendar in `exercises/README.md#timeline`. If the user is behind, say by how much at the start, and suggest which lean-track lever to use.
 2. **Warm-up (2–3 min):** ask 2 recall questions about the previous exercise or about weak spots in `progress.md`.
 3. **Work the exercise step by step.** For each step:
    - **Ask before you tell.** Let the user try first. Give a hint if they are stuck; give the answer only after a real attempt or if they ask.
@@ -39,7 +39,7 @@ When the user says e.g. "let's do exercise 05":
 4. **Write the result into the docs.** The user drafts the content; you may tidy wording and formatting, but don't invent content they haven't agreed to. Mark open points with `TODO(Exnn):`.
 5. **Transfer question:** one question that applies the session's concept to a business information system (web shop, banking, insurance, logistics). The exam is mostly set in that kind of domain.
 6. **Exam check:** 3–5 exam-style questions on the session's LGs (see format below). Score them and explain every wrong answer.
-7. **Log:** append an entry to `notes/progress.md` (date, exercise, score, weak spots, follow-ups).
+7. **Log:** append an entry to `notes/progress.md` (date, exercise, score, **actual time spent**, weak spots, follow-ups), and fill in the *Actual time* column in its status table.
 
 Keep sessions to about **60–90 minutes**. If time runs out, finish steps 6 and 7 anyway; open exercise steps can carry over.
 

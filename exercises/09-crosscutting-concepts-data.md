@@ -2,7 +2,7 @@
 
 - **Learning goals:** LG 03-10 (R1), 04-07 (R2), 01-07 (R2)
 - **Edits:** `docs/arc42/08-crosscutting-concepts.md`
-- **Time:** about 90 min
+- **Time:** about 90 min of focused work; block about twice that (see the [timeline](README.md#timeline))
 
 ## Goal
 

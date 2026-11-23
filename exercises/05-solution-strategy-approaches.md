@@ -2,7 +2,7 @@
 
 - **Learning goals:** LG 03-01 (R1), 03-02 (R1), 03-03 (R1/R3), 03-05 (R1/R2), 04-08 (R1/R2, first ADR)
 - **Edits:** `docs/arc42/04-solution-strategy.md`, `docs/adr/0001-*.md`
-- **Time:** about 90 min
+- **Time:** about 90 min of focused work; block about twice that (see the [timeline](README.md#timeline))
 
 ## Goal
 

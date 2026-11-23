@@ -2,7 +2,7 @@
 
 - **Learning goals:** LG 04-05 (R1), 04-03 (R2/R3), 03-11 (R3), 03-12 (R3)
 - **Edits:** `docs/arc42/06-runtime-view.md`, `docs/arc42/07-deployment-view.md`
-- **Time:** about 90 min
+- **Time:** about 90 min of focused work; block about twice that (see the [timeline](README.md#timeline))
 
 ## Goal
 

@@ -2,7 +2,7 @@
 
 - **Learning goals:** LG 02-03 (R1), 02-04 (R1–R3); preview of 05-02 (R1)
 - **Edits:** `docs/arc42/01-introduction-and-goals.md` (1.2), `docs/arc42/10-quality-requirements.md`
-- **Time:** about 90 min
+- **Time:** about 90 min of focused work; block about twice that (see the [timeline](README.md#timeline))
 
 ## Goal
 

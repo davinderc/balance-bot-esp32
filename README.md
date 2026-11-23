@@ -6,13 +6,15 @@ A small self-balancing robot, used for two things:
 2. **A portfolio project** covering software architecture, embedded firmware, control engineering, PCB design and data analysis.
 
 > **New here?** Abbreviations and ID prefixes (E01, LG, R1, TC-1, QS-1, …) are explained in [ABBREVIATIONS.md](ABBREVIATIONS.md).
+>
+> **Exam timeline:** session durations, the day-by-day calendar to 2026-12-11 and the catch-up plan are in [exercises/README.md](exercises/README.md#timeline).
 
 ## Folder layout
 
 ```
 ABBREVIATIONS.md     every abbreviation and ID prefix used in this repo
 CLAUDE.md            rules for the AI sparring partner (loaded automatically by Claude Code)
-exercises/           one file per session, plus schedule and coverage matrix (exercises/README.md)
+exercises/           one file per session, plus the timeline and coverage matrix (exercises/README.md)
 docs/arc42/          the architecture documentation (arc42 template, one file per section)
 docs/adr/            architecture decision records
 notes/progress.md    session log: scores, weak spots, follow-ups

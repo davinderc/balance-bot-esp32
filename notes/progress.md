@@ -2,23 +2,23 @@
 
 ## Status
 
-| Session | Status | Date | Exam-question score |
-|---|---|---|---|
-| E01 Kick-off, stakeholders | in progress (steps 1–7 done; transfer + exam check pending) | 2026-11-21 → 24 | pending |
-| E02 Requirements, constraints, assumptions | open | | |
-| E03 Quality goals and scenarios | open | | |
-| E04 Context and interfaces | open | | |
-| M1 Mock: chapters 1–2 | open | | |
-| E05 Solution strategy | open | | |
-| E06 Building blocks, principles, dependencies | open | | |
-| E07 Patterns | open | | |
-| E08 Runtime, deployment, notations | open | | |
-| E09 Cross-cutting concepts, data | open | | |
-| E10 Decisions and documentation | open | | |
-| M2 Mock: chapters 3–4 | open | | |
-| E11 Analysis and assessment | open | | |
-| M3 Full mock + official iSAQB mock | open | | |
-| M4 Full mock | open | | |
+| Session | Status | Date | Exam-question score | Actual time |
+|---|---|---|---|---|
+| E01 Kick-off, stakeholders | in progress (steps 1–7 done; transfer + exam check pending) | 2026-11-21 → 24 | pending | 3 sittings so far (fill in hours) |
+| E02 Requirements, constraints, assumptions | open | | | |
+| E03 Quality goals and scenarios | open | | | |
+| E04 Context and interfaces | open | | | |
+| M1 Mock: chapters 1–2 | open | | | |
+| E05 Solution strategy | open | | | |
+| E06 Building blocks, principles, dependencies | open | | | |
+| E07 Patterns | open | | | |
+| E08 Runtime, deployment, notations | open | | | |
+| E09 Cross-cutting concepts, data | open | | | |
+| E10 Decisions and documentation | open | | | |
+| M2 Mock: chapters 3–4 | open | | | |
+| E11 Analysis and assessment | open | | | |
+| M3 Full mock + official iSAQB mock | open | | | |
+| M4 Full mock | open | | | |
 
 ## Weak spots (keep this list current; mock exams draw on it)
 
