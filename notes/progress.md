@@ -4,7 +4,7 @@
 
 | Session | Status | Date | Exam-question score |
 |---|---|---|---|
-| E01 Kick-off, stakeholders | in progress (steps 1–4 first pass done) | 2026-11-21 → 23 | pending |
+| E01 Kick-off, stakeholders | in progress (steps 1–7 done; transfer + exam check pending) | 2026-11-21 → 24 | pending |
 | E02 Requirements, constraints, assumptions | open | | |
 | E03 Quality goals and scenarios | open | | |
 | E04 Context and interfaces | open | | |
@@ -26,6 +26,8 @@
 - LG 01-01 (R1): building block vs. component. Used "specific vs. generic" as the test; the right test is "encapsulated behind an interface, replaceable".
 - Architecture vs. architecture description (ISO 42010): said architecture "is a description". Every system has an architecture; not every system has a description.
 - Product scope vs. project plan: used "not needed for the exam" as a scope reason.
+- LG 01-04 (R1): mixed up decomposing the *work* (tasks, project planning) with decomposing the *system* (building blocks with interfaces).
+- LG 01-02 (R1): elevator pitch was abstract at first; missed "structures understood by stakeholders" (the strongest benefit for a portfolio project) and "systematically reduce complexity". Keep LG 01-01 (what architecture is) apart from LG 01-02 (why we do it).
 
 ## Session entries
 
@@ -36,7 +38,7 @@
 - Follow-ups: <open TODOs carried over>
 -->
 
-### 2026-11-21 to 2026-11-23: E01 Kick-off, vision, stakeholders (paused, continue next session)
+### 2026-11-21 to 2026-11-23: E01 Kick-off, vision, stakeholders (first part)
 - Done: warm-up; step 1 (definition, revised to cover all four commonalities); step 2 (boundaries, all five correct with nuances); step 3 (vision confirmed, v1 scope decided, written to §1.1); step 4 first pass (5 roles, written to §1.3).
 - Score: exam check not done yet.
 - Carry over to the start of the next session, before E02 (about 35–45 min):
@@ -55,3 +57,24 @@
   - TODO(E11): risk "ESP32-S3 fast enough for the control loop" (assumption from Gemini); check: measure worst-case loop time on the dev board before the PCB.
   - Candidate principles from E01: bounded execution time on the control path; no blocking calls, no dynamic allocation, no I/O waits there; no flash writes while balancing.
 
+### 2026-11-24: E01 continued (steps 4–7 done; paused before transfer question and exam check)
+- Step 4: stakeholder table finalised in §1.3 (9 roles: hardware dev, software dev, maintainer, tester/QA, demo operator, bystander, hiring manager/recruiter, technical reviewer, open-source rebuilder).
+- Step 5: role-play interviews done. Hiring manager: README must hook in ~30 s; honest docs; numbers over text; "show your work"; known limitations. Maintainer: build/flash from a fresh clone, pin map matching reality, parameters in the repo (robot flash is only a copy), run logs record their parameter set, secrets out of the public repo, parking note + tag of last known-good firmware.
+- Step 6: architect's tasks mapped to the project. Good: identified feedback as the main difficulty when working alone. Corrections: decomposition is about the system, not the work; task 7 depends on task 1; feedback also comes from measurements, prototypes and tests (LG 03-05).
+- Step 7: pitch abstract, comeback concrete (flash writes stall both cores → random falls). Lesson: one concrete failure beats three correct principles.
+- **Pending at the start of the next session (about 15 min), then close E01:**
+  - Transfer question: insurance customer portal; team listed customers, product owner, developers, testers. Name 3–4 forgotten stakeholders, each with one concern that affects the architecture.
+  - Exam check, 5 questions, already posed (answer from memory, no links):
+    - Q1 (P, pick THREE): commonalities of definitions. a) building blocks with interfaces and relationships; b) architecture exists only if documented in an architecture description; c) decisions and their consequences for the whole system and lifecycle; d) primarily about selecting languages and frameworks; e) structures, cross-cutting concerns and principles; f) detailed implementation of every class.
+    - Q2 (A): building block vs. component. a) component is the general term, building blocks a special form; b) building block is the general term, components a special form; c) synonyms in all definitions; d) building blocks only at runtime, components only in source code.
+    - Q3 (K, true/false: goal or benefit of architecture?): a) systematically reduce complexity; b) structures and concepts understood by all relevant stakeholders; c) guarantee delivery within budget; d) specify architecturally relevant guidelines for implementation and operation; e) make separate requirements engineering unnecessary.
+    - Q4 (P, pick TWO): tasks of architects. a) clarify and scrutinize requirements and constraints, agree refinements with stakeholders; b) define budget and staffing plan; c) analyze and evaluate the architecture regarding risks to meeting requirements; d) personally write all source code for critical components; e) approve the final release to customers.
+    - Q5 (A): stakeholder concerns. a) every concern must become a documented requirement; b) stakeholders who don't read the docs are not relevant; c) identify short-term vs. long-term conflicts and involve the relevant stakeholders; d) project vs. maintainability conflicts are resolved by the architect alone.
+- New follow-ups:
+  - TODO(E02): safety requirements from the bystander and demo operator (tilt cutoff, low-battery cutoff, shutdown: physical switch [HW], kill command [SW], or both?).
+  - TODO(E02): what the open-source rebuilder needs (parts list, wiring, build and flash instructions); reproducible build (pinned framework and library versions) as a convention (CV-2).
+  - TODO(E02): spare "timing" GPIO plus a low-cost logic analyser for testability (small extra cost; decide).
+  - TODO(E03): quality scenario "README hooks a hiring manager within ~30 s".
+  - TODO(E09): configuration management: source of truth for parameters (repo vs. robot flash), run log ↔ parameter set, secrets handling.
+  - TODO(E10): proportional documentation rule (e.g. 5-minute parking note per session; full ADR only for decisions that are expensive to reverse); layered docs (README for the skim, arc42/ADRs for depth).
+  - TODO(E11): conformance checks (e.g. control code must not include Wi-Fi headers), LG 05-03.
