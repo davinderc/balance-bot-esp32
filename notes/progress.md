@@ -4,7 +4,7 @@
 
 | Session | Status | Date | Exam-question score | Actual time |
 |---|---|---|---|---|
-| E01 Kick-off, stakeholders | in progress (steps 1–7 done; transfer + exam check pending) | 2026-11-21 → 24 | pending | 3 sittings so far (fill in hours) |
+| E01 Kick-off, stakeholders | **done** | 2026-11-21 → 24 | 4.8/5 (96%) | 3 sittings so far (fill in hours) |
 | E02 Requirements, constraints, assumptions | open | | | |
 | E03 Quality goals and scenarios | open | | | |
 | E04 Context and interfaces | open | | | |
@@ -28,6 +28,7 @@
 - Product scope vs. project plan: used "not needed for the exam" as a scope reason.
 - LG 01-04 (R1): mixed up decomposing the *work* (tasks, project planning) with decomposing the *system* (building blocks with interfaces).
 - LG 01-02 (R1): elevator pitch was abstract at first; missed "structures understood by stakeholders" (the strongest benefit for a portfolio project) and "systematically reduce complexity". Keep LG 01-01 (what architecture is) apart from LG 01-02 (why we do it).
+- LG 01-02 (R1), **repeat**: in the E01 exam check, marked "ensure structures and concepts are understood by all relevant stakeholders" as *not* a benefit (it is one, nearly verbatim). Same benefit was missing from the pitch. Exam tip: "all *relevant* stakeholders" is curriculum wording; "all stakeholders", "guarantee", "always", "every" without qualification are the overgeneralisation flags.
 
 ## Session entries
 
@@ -78,3 +79,10 @@
   - TODO(E09): configuration management: source of truth for parameters (repo vs. robot flash), run log ↔ parameter set, secrets handling.
   - TODO(E10): proportional documentation rule (e.g. 5-minute parking note per session; full ADR only for decisions that are expensive to reverse); layered docs (README for the skim, arc42/ADRs for depth).
   - TODO(E11): conformance checks (e.g. control code must not include Wi-Fi headers), LG 05-03.
+
+### 2026-11-24: E01 closed
+- Transfer question (insurance portal, forgotten stakeholders): good. Named claim reviewers, policy authors/legal, government/regulator, DevOps. Feedback: "follows local laws" too vague; concerns only help the architecture when concrete (health data in uploads, retention, audit trail; claim spikes after storms → scalability). Also often forgotten: data protection/security officer, call-centre agents, owners of back-end systems, brokers.
+- Score: 4.8/5 (Q1 ✔, Q2 ✔, Q3 4/5, Q4 ✔, Q5 ✔).
+- Wrong / shaky: LG 01-02 (R1): Q3b, "structures and concepts understood by all relevant stakeholders" is a benefit (marked false).
+- Follow-ups: all TODOs listed in the two E01 entries above. Next: E02.
+
