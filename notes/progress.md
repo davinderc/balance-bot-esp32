@@ -4,8 +4,8 @@
 
 | Session | Status | Date | Exam-question score | Actual time |
 |---|---|---|---|---|
-| E01 Kick-off, stakeholders | **done** | 2026-11-21 → 24 | 4.8/5 (96%) | 3 sittings so far (fill in hours) |
-| E02 Requirements, constraints, assumptions | open | | | |
+| E01 Kick-off, stakeholders | **done** | 2026-11-21 → 24 | 4.8/5 (96%) | ≈ 4–5 h over 4 sittings (estimate; plan 90 min) |
+| E02 Requirements, constraints, assumptions | in progress | 2026-11-24 → | | |
 | E03 Quality goals and scenarios | open | | | |
 | E04 Context and interfaces | open | | | |
 | M1 Mock: chapters 1–2 | open | | | |
@@ -85,4 +85,14 @@
 - Score: 4.8/5 (Q1 ✔, Q2 ✔, Q3 4/5, Q4 ✔, Q5 ✔).
 - Wrong / shaky: LG 01-02 (R1): Q3b, "structures and concepts understood by all relevant stakeholders" is a benefit (marked false).
 - Follow-ups: all TODOs listed in the two E01 entries above. Next: E02.
+
+### 2026-11-24 to 25: E02 in progress (paused before step 3 part B)
+- Warm-up: W1 1/3 exact (LG 01-02: "documentation" given instead of "understood by all relevant stakeholders", **third miss**; "risks" given, but risk analysis is an architect's *task*, LG 01-04, not a benefit). W2 correct verdict; architecture comes from decisions and structures, not from the vision.
+- Step 1 done: F-1 to F-16 in §1.1 with priorities. Debugging decision recorded (telemetry and logs while balancing; assumption *plausible*). Caught: "runs on battery" was a constraint (TC-4), micro-ROS a technology decision, "no jitter" a quality requirement; live tuning vs. "parameters only when lying down" conflicted.
+- Step 2 done: TC-10 = ESP-IDF in C++ (D-10, fallback trigger 2 evenings), OC-6 skills, CV-2 to CV-5, RC-1 to RC-3, D-11 ground station platform open → E05.
+- Step 3 part A done: OC-2 € 100 (≈ € 50 spent), OC-3 ≈ 4 h/week after the exam, milestones open.
+- Shaky: Conway's law (LG 02-02, R2): first answer described implicit decisions instead of "structure mirrors communication structure"; second attempt (3 teams → 3 subsystems) right.
+- Implicit assumptions found: FreeRTOS seen as optional (it comes with ESP-IDF); auto-arming assumes someone holds the robot upright; ground station assumes the home network.
+- Step 3 part B done (2026-11-25, evening): AS-1 to AS-13 rated, with sources, in §11.1a. Good: looked up primary sources (ESP-IDF docs, Toshiba datasheet). Learned: forum figures make an assumption *plausible*, not *validated*; "can be configured" ≠ "is the default"; compare stall current with the *continuous* rating, not the peak.
+- **Resume with:** decide whether AS-12's sources change D-10 (ESP-IDF vs. Arduino first); step 4 (one "why" line + reversibility per hardware choice in §9.1, mostly prepared by the AS work); step 5 (3S margin 12.6 V vs. 13.5 V driver limit, back-EMF, remaining € 50); step 6; skip step 7 (R3); transfer question; exam check.
 

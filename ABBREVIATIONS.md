@@ -15,10 +15,12 @@ These prefixes number items inside this repository.
 | **TC-n** | Technical constraint (hardware, toolchain) | [02-constraints.md](docs/arc42/02-constraints.md) §2.1 |
 | **OC-n** | Organisational constraint (budget, time, team) | [02-constraints.md](docs/arc42/02-constraints.md) §2.2 |
 | **CV-n** | Convention (documentation format, coding style) | [02-constraints.md](docs/arc42/02-constraints.md) §2.3 |
+| **RC-n** | Regulatory constraint (battery safety, radio, legal) | [02-constraints.md](docs/arc42/02-constraints.md) §2.4 |
 | **D-n** | Entry in the decision log (smaller decisions) | [09-decisions.md](docs/arc42/09-decisions.md) §9.1 |
 | **ADR-NNNN** | Architecture Decision Record (significant decisions, one file each) | [docs/adr/](docs/adr/0000-template.md) |
 | **QS-n** | Quality scenario | [10-quality-requirements.md](docs/arc42/10-quality-requirements.md) §10.2 |
 | **CR-n** | Candidate risk: an unverified question raised during setup | [11-risks-and-technical-debt.md](docs/arc42/11-risks-and-technical-debt.md) §11.1 |
+| **AS-n** | Assumption, with its validation status | [11-risks-and-technical-debt.md](docs/arc42/11-risks-and-technical-debt.md) §11.1a |
 | **TODO(Exx)** | Open point, to be resolved in exercise Exx | anywhere in `docs/` |
 | **§n** | Section n of the arc42 documentation | `docs/arc42/` |
 
@@ -78,6 +80,7 @@ These prefixes number items inside this repository.
 | **2S / 3S** | Battery pack with 2 or 3 cells in series |
 | **N8R8** | ESP32-S3 module variant: 8 MB flash, 8 MB PSRAM |
 | **PSRAM** | Pseudo-static RAM (external RAM next to the MCU) |
+| **RF** | Radio frequency (the radio part of the ESP32-S3 module) |
 | **GPIO** | General-purpose input/output (pin) |
 | **PWM** | Pulse-width modulation (motor speed control) |
 | **PCNT** | Pulse counter: ESP32 peripheral that can decode quadrature encoders |

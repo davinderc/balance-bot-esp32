@@ -16,6 +16,8 @@
 | D-7 | IMU: MPU-6050, replace if needed | 2026-11 | accepted | TODO(E02) | TODO(E10) |
 | D-8 | Custom 2-layer PCB only after the prototype works | 2026-11 | accepted | – | – |
 | D-9 | micro-ROS on the MCU (instead of an SBC with ROS 2 on the robot) | 2026-11 | **open**: micro-ROS vs. custom protocol | | ADR-0001 (E05) |
+| D-10 | Firmware framework: ESP-IDF directly, in C++ (not Arduino-ESP32) | 2026-11-25 | accepted (E02); fallback Arduino-ESP32 | costly once drivers are written | – |
+| D-11 | Ground station platform | 2026-11-25 | **open**: preference web browser (also usable from a phone) → E05. v1 runs on the home network only; demos without it (e.g. the ESP32 as its own access point) → v2. | | – |
 
 ## 9.2 Interdependencies between decisions
 

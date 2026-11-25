@@ -21,13 +21,32 @@ The vision describes where the project is going; v1 is the smallest release that
 | OTA updates | later | High time cost (partitioning, update and rollback, security), little portfolio value. If built: only while the robot is not balancing, because flash writes stall both cores (to verify). |
 | micro-ROS integration | open, decide in E05 | Not researched yet. Must be decided before the robot–ground station link is built, because switching later means rewriting both ends. |
 
-**Explicit assumption (E01):** debugging will rely on logs, so a data link to the ground station is needed in v1. This is based on limited experience with mobile embedded projects. TODO(E02): confirm.
+**Decision (E02):** while the robot balances, debugging uses telemetry and logs over the wireless link. Breakpoints (USB/JTAG) are only for non-critical code on the bench: a breakpoint halts the control loop and the robot falls, and a cable changes the robot's dynamics.
+**Assumption behind it (E01, status *plausible*: reasoned, not tested):** telemetry and logs are enough to find faults in the running control loop. This is based on limited experience with mobile embedded projects.
 
-**Functional requirements:** TODO(E02)
+**Functional requirements** (E02). Each row says *what* the system does; *how well* (response times, thresholds, smoothness) goes to the quality scenarios in E03.
+Priority: **must** = v1 is not done without it; **should** = v1 if time allows; **later** = v2 or beyond.
 
-| ID | Requirement | Priority |
-|---|---|---|
-| F-1 | | |
+| ID | The system shall … | Tag | Priority | Notes |
+|---|---|---|---|---|
+| F-1 | Balance in place. | [SW] | must | "No jittery or oscillating movement" → quality scenario (E03). |
+| F-2 | Hold a position or follow a velocity setpoint while balancing. | [SW] | later | Driving by remote control is also "later" (scope table above). |
+| F-3 | Operate untethered: no cable for power, communication or debugging while balancing. | [SW+HW] | must | Realised by TC-4 (battery) and the wireless link. Rules out e.g. running the controller on a laptop over USB. |
+| F-4 | Detect a fall (tilt beyond a threshold) and disable motor power. | [SW] | must | Response time → E03. Threshold value: later. |
+| F-5 | After any motor cutoff (fall, kill command, link loss, low battery), stay disarmed until re-armed by a command from the ground station. | [SW] | must | Re-arm button on the robot [HW]: later. Automatic re-arm when upright again: rejected for now (bystander safety); revisit only with a safety argument. |
+| F-6 | Disable motor power on a kill command from the ground station, at any time. | [SW] | must | Needs a working link; the physical switch (F-7) is the fallback. |
+| F-7 | Provide a physical switch that disables motor power. | [HW] | must | Cuts the motor supply only; the MCU stays powered and keeps logging. |
+| F-8 | Disable motor power if no message has arrived from the ground station within a timeout (link loss). | [SW] | must | The timeout must bridge short dropouts: keep balancing while the link recovers. Timeout value → E03. Revisit after measuring how often and how long the link drops. |
+| F-9 | Raise a low-battery warning on the ground station, from the battery voltage in the telemetry (F-10). | [SW] | must | Minimal cost: uses data that is already sent. Threshold must sit above the BMS cutoff (to check). Warning on the robot itself (a distinct motion): later. Buzzer rejected (effort). |
+| F-10 | Stream live telemetry: newest data has priority, old samples may be dropped. | [SW] | must | Content: see list below. |
+| F-11 | Stream complete telemetry for experiments (no loss). | [SW] | later | |
+| F-12 | Show telemetry as live graphs on the ground station. | [SW] | later | Until then: log files plus offline plotting. |
+| F-13 | Record telemetry to log files on the ground station, for debugging and later analysis. | [SW] | must | Each log records the parameter set that produced it (maintainer concern, TODO(E09)). |
+| F-14 | Change control parameters from the ground station while the robot runs; they take effect at once. | [SW] | must | v1: parameters live in robot RAM only. After power-on, the ground station sends a parameter set and then the arm command. |
+| F-15 | Keep tuned parameters across power cycles: load them from flash at power-on; save them to flash only while not balancing. | [SW] | later | Not needed for v1, because the ground station sends the parameters and arms the robot anyway (F-14, F-16). Save points: after a kill command, after a fall, or when picked up and set down. Reason: flash writes stall both cores (to verify). Source of truth (repo, ground station or robot) → TODO(E09). |
+| F-16 | Arm the motors only on a command from the ground station, and only when a valid parameter set is loaded and the robot is held near upright. Otherwise refuse and report why. | [SW] | must | No compiled-in default parameters; no automatic arming (a robot lying down or half-upright on a table must not lurch). Optional: an LED pattern confirms the arm command (if the board has a usable LED, to verify). "Near upright" range → E03. |
+
+**Telemetry content (F-10):** estimated pitch angle; accelerometer tilt angle (raw); pitch rate (gyroscope); raw accelerometer and gyroscope axes; forward/backward linear velocity; wheel positions (encoder counts); wheel speeds (optional); motor commands (PWM duty); PID contributions (P, I, D); battery voltage; current and energy (INA219); ID of the active parameter set; timestamps on a common time base.
 
 ## 1.2 Quality goals
 
