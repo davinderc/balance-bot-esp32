@@ -5,7 +5,7 @@
 | Session | Status | Date | Exam-question score | Actual time |
 |---|---|---|---|---|
 | E01 Kick-off, stakeholders | **done** | 2026-11-21 → 24 | 4.8/5 (96%) | ≈ 4–5 h over 4 sittings (estimate; plan 90 min) |
-| E02 Requirements, constraints, assumptions | in progress | 2026-11-24 → | | |
+| E02 Requirements, constraints, assumptions | **done** | 2026-11-24 → 27 | 5/5 (100%) | TODO: fill in hours (5 sittings) |
 | E03 Quality goals and scenarios | open | | | |
 | E04 Context and interfaces | open | | | |
 | M1 Mock: chapters 1–2 | open | | | |
@@ -28,6 +28,10 @@
 - Product scope vs. project plan: used "not needed for the exam" as a scope reason.
 - LG 01-04 (R1): mixed up decomposing the *work* (tasks, project planning) with decomposing the *system* (building blocks with interfaces).
 - LG 01-02 (R1): elevator pitch was abstract at first; missed "structures understood by stakeholders" (the strongest benefit for a portfolio project) and "systematically reduce complexity". Keep LG 01-01 (what architecture is) apart from LG 01-02 (why we do it).
+- LG 01-02 (R1), **third miss (E02 warm-up)**: gave "documentation" instead of "structures and concepts understood by all relevant stakeholders", and "risk awareness" (an architect's *task*, LG 01-04) as a benefit. Pattern: naming the *measure* instead of the *goal*. Same pattern in E02 step 6 (goal phrased as an activity).
+- LG 02-02 (R1): requirement vs. constraint, mixed up in both directions: "runs on battery" (a constraint, TC-4) as a functional requirement; in the transfer question, "admins can correct mistakes" and "app and web must not contradict" (requirements) as constraints. Test: does it say what the system does / how well (requirement), or does it limit how we may build it, non-negotiable for now (constraint)?
+- LG 02-02 (R2): Conway's law: first described implicit decisions; then reversed the direction (teams follow the platforms). Correct: the system mirrors the *existing* communication structure of the organisation.
+- LG 02-05 (R1): strength of evidence: forum figures make an assumption *plausible*, not *validated*; "can be configured" ≠ "is the default".
 - LG 01-02 (R1), **repeat**: in the E01 exam check, marked "ensure structures and concepts are understood by all relevant stakeholders" as *not* a benefit (it is one, nearly verbatim). Same benefit was missing from the pitch. Exam tip: "all *relevant* stakeholders" is curriculum wording; "all stakeholders", "guarantee", "always", "every" without qualification are the overgeneralisation flags.
 
 ## Session entries
@@ -95,4 +99,18 @@
 - Implicit assumptions found: FreeRTOS seen as optional (it comes with ESP-IDF); auto-arming assumes someone holds the robot upright; ground station assumes the home network.
 - Step 3 part B done (2026-11-25, evening): AS-1 to AS-13 rated, with sources, in §11.1a. Good: looked up primary sources (ESP-IDF docs, Toshiba datasheet). Learned: forum figures make an assumption *plausible*, not *validated*; "can be configured" ≠ "is the default"; compare stall current with the *continuous* rating, not the peak.
 - **Resume with:** decide whether AS-12's sources change D-10 (ESP-IDF vs. Arduino first); step 4 (one "why" line + reversibility per hardware choice in §9.1, mostly prepared by the AS work); step 5 (3S margin 12.6 V vs. 13.5 V driver limit, back-EMF, remaining € 50); step 6; skip step 7 (R3); transfer question; exam check.
+
+### 2026-11-26 to 27: E02 closed
+- Step 4 done: why line + reversibility for D-1 to D-8 and new D-12 (wheels) in §9.1; reversibility copied into §2.1. Strong: D-2 ↔ D-3 dependency found unprompted; HW vs. SW reversibility separated; D-8 seen as the decision that keeps the others cheap. D-3 reason sharpened with the L298N voltage-drop comparison (datasheets). D-10 confirmed (ESP-IDF); its reason contains an unverified assumption (Arduino-ESP32 can also call ESP-IDF/FreeRTOS APIs).
+- Step 5 done: CR-3 and CR-4 extended, CR-8 to CR-12 added as questions to check. CR-12 (IMU swap) is input for a modifiability scenario in E03. CR-9 (shared I²C bus) is a pin-map question for E04.
+- Step 6 done: three short- vs. long-term conflicts in §1.3 (docs first vs. hardware now; ESP-IDF vs. Arduino; IMU abstraction). Needed a clarification of what "short- vs. long-term" means; exam vs. portfolio was short vs. short.
+- Step 7 skipped (R3, lean lever 2).
+- Transfer question (bank payment-initiation constraints): 2 of 4 clean (core banking system technical; authentication regulatory, with correct design consequence MFA). 2 of 4 were requirements in disguise. Conway reversed at first. Feedback: PSD2 strong customer authentication vs. GDPR are different regulatory concerns; Conway predicts payment logic duplicated per channel team.
+- Score: 5/5 (Q1 b ✔, Q2 a, c ✔, Q3 R R C C C ✔, Q4 c ✔, Q5 a, c ✔, unsure on c).
+- Follow-ups:
+  - TODO(E03): quality scenarios for: fall response time (F-4), "near upright" range for arming (F-16), link-loss timeout (F-8), no jitter/oscillation (F-1), IMU swap effort (CR-12, modifiability), README hooks a hiring manager in ~30 s.
+  - TODO(E04): pin map with a spare timing GPIO; one or two I²C buses (CR-9); robot–ground station protocol as a defined interface (Conway point).
+  - TODO(E05): timer-driven control loop (tick too coarse, AS-1); spike for jitter with Wi-Fi (AS-13); micro-ROS (D-9); ground station platform (D-11).
+  - TODO(E06): IMU abstraction boundary (raw data vs. orientation estimate); control path in IRAM as an option (AS-3).
+  - TODO(E10): open-source rebuilder docs (parts list, wiring, build and flash).
 
